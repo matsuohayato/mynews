@@ -1,0 +1,25 @@
+<!-- ベーステンプレートを適用する -->
+
+{% extends 'home.html' %}
+{% block title %}Post{% endblock %}
+
+{% block contents %}
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col offset-2">
+      <!-- ファイルをアップロードする場合は
+                 enctype="multipart/form-data"が必要 -->
+        <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+
+      
+        {{ form.as_p }}
+        
+      <button type="submit">投稿する</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
